@@ -12,7 +12,7 @@ The official landing page and direct connect portal for **Maker Valley**, an inn
 - **Custom Prototyping & Maker Consulting**
 
 ## Direct Links & Social Channels
-- **WhatsApp Direct**: [Chat with us (+91 79071 82494)](https://wa.me/message/P6YGMKPTNQJLM1)
+- **WhatsApp (Chats Only)**: [Chat with us (+91 79071 82494)](https://wa.me/message/P6YGMKPTNQJLM1) *(No direct voice calls)*
 - **Instagram**: [@makervalley.official](https://www.instagram.com/makervalley.official)
 - **Facebook**: [Maker Valley](https://www.facebook.com/share/1CQN1jtYM4/)
 - **Website Domain**: [https://makervalley.co.in](https://makervalley.co.in)
