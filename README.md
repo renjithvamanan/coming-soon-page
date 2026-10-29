@@ -1,7 +1,7 @@
 # Maker Valley — Official Website
 
 > **Imagine • Design • Build**  
-> *Ideas, Built with Passion*  
+> *Where Ideas Take Shape*  
 > Hosted at [makervalley.co.in](https://makervalley.co.in)
 
 The official landing page and direct connect portal for **Maker Valley**, an innovation studio and digital fabrication lab specializing in:
