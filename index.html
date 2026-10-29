@@ -1,19 +1,875 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MakerValley - Coming Soon</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Maker Valley — Ideas, Built with Passion | Imagine • Design • Build</title>
+  
+  <!-- Primary Meta Tags -->
+  <meta name="title" content="Maker Valley — Ideas, Built with Passion">
+  <meta name="description" content="Maker Valley is a premier innovation studio & digital fabrication lab specializing in 3D Printing, CNC Machining, PCB & Electronics prototyping, and Laser Engraving in India.">
+  <meta name="keywords" content="Maker Valley, 3D Printing India, CNC Machining, PCB Design, Laser Engraving, Rapid Prototyping, Hardware Makerspace, Maker Studio">
+  <meta name="author" content="Maker Valley">
+  <meta name="theme-color" content="#024c48">
+  <link rel="canonical" href="https://makervalley.co.in/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://makervalley.co.in/">
+  <meta property="og:title" content="Maker Valley — Ideas, Built with Passion">
+  <meta property="og:description" content="Innovation studio & fabrication lab: 3D Printing, CNC, PCB Electronics & Laser Engraving. Imagine • Design • Build.">
+  <meta property="og:image" content="https://makervalley.co.in/assets/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://makervalley.co.in/">
+  <meta property="twitter:title" content="Maker Valley — Ideas, Built with Passion">
+  <meta property="twitter:description" content="Innovation studio & fabrication lab: 3D Printing, CNC, PCB Electronics & Laser Engraving.">
+  <meta property="twitter:image" content="https://makervalley.co.in/assets/og-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/favicon-192x192.png">
+
+  <!-- Google Fonts: Plus Jakarta Sans, Outfit & Caveat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Outfit:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              pine: '#024c48',
+              pineDark: '#013330',
+              pineDeep: '#012422',
+              pineLight: '#08635e',
+              amber: '#f5a623',
+              amberLight: '#fbb03b',
+              orange: '#e05a1e',
+              teal: '#67c2c9',
+              cream: '#fdfbf7',
+              creamMuted: '#f4efe6',
+              sand: '#ece5d8',
+            }
+          },
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'system-ui', 'sans-serif'],
+            heading: ['"Outfit"', 'system-ui', 'sans-serif'],
+            hand: ['"Caveat"', 'cursive'],
+          },
+          boxShadow: {
+            'glow-amber': '0 0 35px -5px rgba(245, 166, 35, 0.35)',
+            'glow-pine': '0 10px 40px -10px rgba(2, 76, 72, 0.45)',
+            'card': '0 10px 30px -5px rgba(1, 36, 34, 0.08), 0 4px 6px -2px rgba(1, 36, 34, 0.04)',
+            'card-hover': '0 20px 40px -10px rgba(1, 36, 34, 0.16), 0 8px 12px -3px rgba(1, 36, 34, 0.06)',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    /* Topographic background pattern styling */
+    .topo-bg {
+      background-color: #012422;
+      background-image: radial-gradient(rgba(2, 76, 72, 0.8) 1px, transparent 1px),
+                        radial-gradient(rgba(245, 166, 35, 0.15) 1px, transparent 1px);
+      background-size: 40px 40px;
+      background-position: 0 0, 20px 20px;
+    }
+
+    .topo-lines {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600' viewBox='0 0 600 600'%3E%3Cpath d='M0 150 Q 150 100 300 150 T 600 150 M0 300 Q 150 250 300 300 T 600 300 M0 450 Q 150 400 300 450 T 600 450' fill='none' stroke='%2308635e' stroke-width='1.2' stroke-opacity='0.25'/%3E%3Cpath d='M0 80 Q 200 40 400 90 T 600 80 M0 220 Q 200 170 400 230 T 600 220 M0 370 Q 200 330 400 380 T 600 370 M0 520 Q 200 480 400 530 T 600 520' fill='none' stroke='%23f5a623' stroke-width='0.8' stroke-opacity='0.15'/%3E%3Cpath d='M100 0 Q 70 200 120 400 T 90 600 M300 0 Q 260 200 320 400 T 290 600 M500 0 Q 470 200 520 400 T 480 600' fill='none' stroke='%23024c48' stroke-width='1' stroke-opacity='0.25'/%3E%3C/svg%3E");
+    }
+
+    /* Soft grain texture */
+    .noise-overlay {
+      position: absolute;
+      inset: 0;
+      opacity: 0.035;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+  </style>
 </head>
-<body class="bg-slate-950 text-slate-100 flex flex-col items-center justify-center min-h-screen">
-    <div class="text-center px-4 max-w-2xl">
-        <span class="bg-blue-500/10 text-blue-400 text-xs font-semibold px-3 py-1 rounded-full border border-blue-500/20">LAUNCHING SOON</span>
-        <h1 class="text-5xl font-extrabold tracking-tight mt-6 mb-2 bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">MakerValley</h1>
-        <p class="text-slate-300 mb-8">We are building, Stay tuned!</p>
-        <div class="inline-block bg-slate-900 border border-slate-800 rounded-lg p-4 text-sm text-slate-400">
-            Working on a local prototype at <code class="text-cyan-400">http://localhost:5000</code> 🚀
-        </div>
+
+<body class="bg-brand-cream text-brand-pineDeep font-sans antialiased selection:bg-brand-amber selection:text-brand-pineDeep">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-brand-pineDeep text-brand-cream text-[11px] sm:text-xs py-2 px-4 border-b border-brand-pine/30">
+    <div class="max-w-6xl mx-auto flex items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <span class="inline-flex items-center px-2 py-0.5 rounded text-[10px] font-bold bg-brand-amber/20 text-brand-amber border border-brand-amber/30 shrink-0">
+          PROTOTYPING LAB
+        </span>
+        <span class="text-brand-cream/80 hidden sm:inline">Imagine • Design • Build</span>
+        <span class="text-brand-cream/40 hidden md:inline">|</span>
+        <span class="text-brand-cream/80 hidden md:inline">Made with ❤️ in India</span>
+      </div>
+      <div class="flex items-center gap-2 font-medium shrink-0">
+        <a href="https://wa.me/message/P6YGMKPTNQJLM1" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 text-emerald-300 hover:text-emerald-200 transition-colors">
+          <svg class="w-3.5 h-3.5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span>+91 79071 82494</span>
+        </a>
+      </div>
     </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="sticky top-0 z-50 bg-brand-cream/90 backdrop-blur-md border-b border-brand-sand">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 h-18 sm:h-20 flex items-center justify-between">
+      <!-- Logo Brand -->
+      <a href="#" class="flex items-center gap-2.5 sm:gap-3 group">
+        <div class="relative w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-white p-1 border border-brand-sand shadow-sm group-hover:scale-105 transition-transform flex items-center justify-center overflow-hidden shrink-0">
+          <img src="assets/logo-emblem.png" alt="Maker Valley Emblem" class="w-full h-full object-contain">
+        </div>
+        <div>
+          <span class="block font-heading font-black text-lg sm:text-2xl tracking-tight text-brand-pine leading-none group-hover:text-brand-orange transition-colors">
+            MAKER VALLEY
+          </span>
+          <span class="text-[9px] sm:text-[11px] font-bold tracking-widest uppercase text-brand-pine/70 block mt-0.5">
+            Imagine • Design • Build
+          </span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav Links -->
+      <nav class="hidden md:flex items-center gap-7 text-sm font-semibold text-brand-pine/80">
+        <a href="#about" class="hover:text-brand-orange transition-colors">About</a>
+        <a href="#services" class="hover:text-brand-orange transition-colors">Capabilities</a>
+        <a href="#connect" class="hover:text-brand-orange transition-colors">Social & Connect</a>
+        <a href="#contact" class="hover:text-brand-orange transition-colors">Inquiry</a>
+      </nav>
+
+      <!-- Quick Action: Direct WhatsApp Button -->
+      <div class="flex items-center gap-2 sm:gap-3">
+        <a href="https://wa.me/message/P6YGMKPTNQJLM1" target="_blank" rel="noopener noreferrer" 
+           class="inline-flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-2 sm:py-2.5 rounded-full bg-emerald-600 hover:bg-emerald-700 text-white font-semibold text-xs sm:text-sm shadow-md hover:shadow-lg transition-all duration-200 transform hover:-translate-y-0.5">
+          <svg class="w-4 h-4 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+          <span><span class="hidden sm:inline">Chat on </span>WhatsApp</span>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="relative overflow-hidden bg-brand-pineDeep text-brand-cream pt-14 pb-20 md:py-28 topo-bg topo-lines border-b border-brand-pine/40">
+    <div class="noise-overlay"></div>
+    
+    <!-- Ambient color glows -->
+    <div class="absolute -top-32 -left-32 w-96 h-96 bg-brand-pine rounded-full blur-3xl opacity-60 pointer-events-none"></div>
+    <div class="absolute top-1/2 -right-32 w-96 h-96 bg-brand-amber/20 rounded-full blur-3xl pointer-events-none"></div>
+    <div class="absolute bottom-0 left-1/3 w-80 h-80 bg-brand-orange/15 rounded-full blur-3xl pointer-events-none"></div>
+
+    <div class="relative max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="grid lg:grid-cols-12 gap-10 lg:gap-8 items-center">
+        
+        <!-- Left Column: Story & Headline -->
+        <div class="lg:col-span-7 text-center lg:text-left space-y-5 sm:space-y-6">
+          
+          <!-- Handwritten Tag + Badge -->
+          <div class="inline-flex flex-wrap items-center justify-center lg:justify-start gap-2.5 sm:gap-3">
+            <span class="font-hand text-brand-amber text-2xl sm:text-3xl font-bold tracking-wide transform -rotate-2 inline-block">
+              Ideas, Built with Passion
+            </span>
+            <span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-brand-pine/60 border border-brand-amber/30 text-brand-amber text-[11px] sm:text-xs font-semibold">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+              Maker Studio & Prototyping Lab
+            </span>
+          </div>
+
+          <!-- Main Heading -->
+          <h1 class="font-heading text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight leading-[1.1] text-white break-words">
+            Welcome to
+            <span class="block mt-1 bg-gradient-to-r from-brand-amber via-brand-orange to-brand-amber bg-clip-text text-transparent">
+              Maker Valley
+            </span>
+          </h1>
+
+          <!-- Tagline -->
+          <p class="font-heading text-base sm:text-lg font-bold tracking-widest text-brand-teal uppercase">
+            IMAGINE • DESIGN • BUILD
+          </p>
+
+          <!-- Brief Description -->
+          <p class="text-brand-cream/85 text-sm sm:text-base lg:text-lg leading-relaxed max-w-2xl mx-auto lg:mx-0 font-normal">
+            Maker Valley is a modern digital fabrication and prototyping studio. We transform creative concepts into tangible reality through high-precision <strong>3D Printing</strong>, <strong>CNC Machining</strong>, <strong>Laser Engraving</strong>, and custom <strong>PCB & Electronics</strong> development.
+          </p>
+
+          <!-- Direct Action Buttons (WhatsApp, Instagram, Facebook) -->
+          <div class="pt-3 flex flex-col sm:flex-row flex-wrap items-center justify-center lg:justify-start gap-3">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/message/P6YGMKPTNQJLM1" target="_blank" rel="noopener noreferrer" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-emerald-600/30 transition-all duration-200 transform hover:-translate-y-0.5">
+              <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              <span>Chat on WhatsApp</span>
+            </a>
+
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/makervalley.official" target="_blank" rel="noopener noreferrer" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#bc1888] hover:opacity-95 text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-orange-500/30 transition-all duration-200 transform hover:-translate-y-0.5">
+              <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+              <span>Follow @makervalley.official</span>
+            </a>
+
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/1CQN1jtYM4/" target="_blank" rel="noopener noreferrer" 
+               class="w-full sm:w-auto inline-flex items-center justify-center gap-2.5 px-6 py-3.5 rounded-xl bg-[#1877f2] hover:bg-[#166fe5] text-white font-bold text-sm sm:text-base shadow-lg hover:shadow-blue-500/30 transition-all duration-200 transform hover:-translate-y-0.5">
+              <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              <span>Facebook Page</span>
+            </a>
+          </div>
+
+          <!-- Quick trust badges -->
+          <div class="pt-2 flex flex-wrap items-center justify-center lg:justify-start gap-4 sm:gap-6 text-xs text-brand-cream/70">
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Direct WhatsApp Quotes
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-brand-amber" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Custom Prototyping
+            </span>
+            <span class="flex items-center gap-1.5">
+              <svg class="w-4 h-4 text-brand-teal" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+              Made in India
+            </span>
+          </div>
+
+        </div>
+
+        <!-- Right Column: Visiting Card Showcase with Logo -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="relative w-72 sm:w-88 md:w-96 group">
+            
+            <!-- Warm decorative glow ring -->
+            <div class="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-brand-amber via-brand-orange to-brand-teal opacity-30 blur-2xl group-hover:opacity-50 transition duration-500"></div>
+            
+            <!-- Visiting Card Presentation (Matches physical card brand asset) -->
+            <div class="relative bg-[#fdfbf7] text-brand-pineDeep rounded-3xl p-6 sm:p-8 shadow-2xl border border-brand-sand transition-transform duration-300 group-hover:scale-[1.02]">
+              
+              <!-- Card Top: Handwritten slogan -->
+              <div class="flex items-center justify-between border-b border-brand-sand/60 pb-3 mb-4">
+                <span class="inline-flex items-center gap-1 text-[10px] font-bold tracking-widest uppercase px-2.5 py-0.5 rounded-full bg-brand-pine/10 text-brand-pine">
+                  OFFICIAL MARK
+                </span>
+                <span class="font-hand text-brand-orange text-lg sm:text-xl font-bold">
+                  Ideas, Built with Passion
+                </span>
+              </div>
+
+              <!-- High-res Logo (Full-color on warm ivory background for maximum contrast) -->
+              <div class="relative mx-auto w-52 h-52 sm:w-64 sm:h-64 flex items-center justify-center p-2">
+                <img src="assets/logo.png" alt="Maker Valley Official Logo" class="w-full h-full object-contain filter drop-shadow-md">
+              </div>
+
+              <!-- Card Bottom Taglines matching the physical brand card -->
+              <div class="mt-4 pt-4 border-t border-brand-sand/80 text-center space-y-1.5">
+                <p class="font-heading font-black text-xs sm:text-sm tracking-widest uppercase text-brand-pine">
+                  IMAGINE • DESIGN • BUILD
+                </p>
+                <div class="flex items-center justify-center gap-2 text-[10px] font-bold tracking-wider text-brand-pine/60 uppercase">
+                  <span class="h-px w-6 bg-brand-sand"></span>
+                  <span>MADE WITH ❤️ IN INDIA</span>
+                  <span class="h-px w-6 bg-brand-sand"></span>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- DIRECT CONNECT / SOCIAL LINKS SECTION (PRIMARY FOCUS) -->
+  <section id="connect" class="py-20 bg-brand-creamMuted relative overflow-hidden">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-14">
+        <span class="text-xs font-bold tracking-widest uppercase text-brand-orange bg-brand-orange/10 px-3 py-1 rounded-full border border-brand-orange/20">
+          Reach Us Instantly
+        </span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-pine mt-3 mb-4 tracking-tight">
+          Connect Directly With Maker Valley
+        </h2>
+        <p class="text-brand-pine/70 text-base sm:text-lg">
+          Whether you have a 3D model ready for print, an electronic idea to prototype, or want to collaborate — click below to chat with us immediately on your preferred platform.
+        </p>
+      </div>
+
+      <!-- 3 Primary Social Direct Action Cards -->
+      <div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+        
+        <!-- CARD 1: WHATSAPP -->
+        <div class="bg-white rounded-2xl p-7 shadow-card hover:shadow-card-hover border border-emerald-100 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-14 h-14 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center group-hover:bg-emerald-600 group-hover:text-white transition-colors duration-300 shadow-inner">
+                <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+              </div>
+              <span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-xs font-bold uppercase tracking-wider">
+                <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                Fastest Response
+              </span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-pine mb-2">WhatsApp Direct</h3>
+            <p class="text-sm text-brand-pine/70 leading-relaxed mb-4">
+              Get rapid project estimates, send files & photos of your designs, or ask questions directly to our team.
+            </p>
+
+            <div class="bg-emerald-50/70 border border-emerald-100 rounded-xl p-3 mb-6 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-emerald-800 font-semibold block">Official Phone</span>
+                <span class="text-sm font-bold font-mono text-emerald-950">+91 79071 82494</span>
+              </div>
+              <button onclick="copyToClipboard('+917907182494', 'WhatsApp number copied!')" title="Copy Number" class="p-2 text-emerald-700 hover:text-emerald-900 bg-white rounded-lg shadow-sm border border-emerald-200 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+              </button>
+            </div>
+          </div>
+
+          <a href="https://wa.me/message/P6YGMKPTNQJLM1" target="_blank" rel="noopener noreferrer" 
+             class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200">
+            <span>Message on WhatsApp</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+        <!-- CARD 2: INSTAGRAM -->
+        <div class="bg-white rounded-2xl p-7 shadow-card hover:shadow-card-hover border border-orange-100 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-14 h-14 rounded-2xl bg-orange-50 text-brand-orange flex items-center justify-center group-hover:bg-gradient-to-tr group-hover:from-[#f09433] group-hover:via-[#e6683c] group-hover:to-[#bc1888] group-hover:text-white transition-all duration-300 shadow-inner">
+                <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.441-1.44z"/></svg>
+              </div>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-orange-50 text-brand-orange text-xs font-bold uppercase tracking-wider">
+                Photo & Video Feed
+              </span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-pine mb-2">Instagram</h3>
+            <p class="text-sm text-brand-pine/70 leading-relaxed mb-4">
+              Watch maker timelapses, explore our custom builds, CNC cuts, 3D resin prints, and behind-the-scenes engineering.
+            </p>
+
+            <div class="bg-orange-50/70 border border-orange-100 rounded-xl p-3 mb-6 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-brand-orange font-semibold block">Official Handle</span>
+                <span class="text-sm font-bold font-mono text-brand-pine">@makervalley.official</span>
+              </div>
+              <a href="https://www.instagram.com/makervalley.official" target="_blank" rel="noopener noreferrer" class="p-2 text-brand-orange hover:text-white hover:bg-brand-orange rounded-lg shadow-sm border border-orange-200 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <a href="https://www.instagram.com/makervalley.official" target="_blank" rel="noopener noreferrer" 
+             class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#bc1888] hover:opacity-95 text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200">
+            <span>Follow on Instagram</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+        <!-- CARD 3: FACEBOOK -->
+        <div class="bg-white rounded-2xl p-7 shadow-card hover:shadow-card-hover border border-blue-100 transition-all duration-300 flex flex-col justify-between group hover:-translate-y-1">
+          <div>
+            <div class="flex items-center justify-between mb-5">
+              <div class="w-14 h-14 rounded-2xl bg-blue-50 text-[#1877f2] flex items-center justify-center group-hover:bg-[#1877f2] group-hover:text-white transition-colors duration-300 shadow-inner">
+                <svg class="w-8 h-8 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+              </div>
+              <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full bg-blue-50 text-[#1877f2] text-xs font-bold uppercase tracking-wider">
+                Community & Updates
+              </span>
+            </div>
+
+            <h3 class="font-heading text-xl font-bold text-brand-pine mb-2">Facebook</h3>
+            <p class="text-sm text-brand-pine/70 leading-relaxed mb-4">
+              Join the Maker Valley community, read announcements, connect with fellow makers, and stay updated on our upcoming releases.
+            </p>
+
+            <div class="bg-blue-50/70 border border-blue-100 rounded-xl p-3 mb-6 flex items-center justify-between">
+              <div>
+                <span class="text-[11px] uppercase tracking-wider text-[#1877f2] font-semibold block">Official Page</span>
+                <span class="text-sm font-bold font-mono text-brand-pine">Maker Valley</span>
+              </div>
+              <a href="https://www.facebook.com/share/1CQN1jtYM4/" target="_blank" rel="noopener noreferrer" class="p-2 text-[#1877f2] hover:text-white hover:bg-[#1877f2] rounded-lg shadow-sm border border-blue-200 transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+              </a>
+            </div>
+          </div>
+
+          <a href="https://www.facebook.com/share/1CQN1jtYM4/" target="_blank" rel="noopener noreferrer" 
+             class="w-full inline-flex items-center justify-center gap-2 py-3.5 px-4 rounded-xl bg-[#1877f2] hover:bg-[#166fe5] text-white font-bold text-sm shadow-md hover:shadow-lg transition-all duration-200">
+            <span>Visit Facebook Page</span>
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+          </a>
+        </div>
+
+      </div>
+
+      <!-- Quick Scan / Offline Visiting Card Feature -->
+      <div class="mt-12 bg-white rounded-2xl p-6 sm:p-8 border border-brand-sand shadow-sm max-w-4xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
+        <div class="flex items-center gap-4">
+          <div class="w-12 h-12 rounded-xl bg-brand-pine/10 text-brand-pine flex items-center justify-center shrink-0">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z"/></svg>
+          </div>
+          <div>
+            <h4 class="font-heading font-bold text-lg text-brand-pine">Prefer scanning from your phone?</h4>
+            <p class="text-sm text-brand-pine/70">View our official connect card with WhatsApp, Instagram & Facebook QR codes.</p>
+          </div>
+        </div>
+        <button onclick="toggleCardModal(true)" class="shrink-0 px-5 py-2.5 rounded-xl bg-brand-pine hover:bg-brand-pineLight text-white font-semibold text-sm transition-colors flex items-center gap-2">
+          <span>View Connect Card</span>
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg>
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CAPABILITIES / SERVICES SECTION -->
+  <section id="services" class="py-24 bg-white relative">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <!-- Section Header -->
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span class="text-xs font-bold tracking-widest uppercase text-brand-pine bg-brand-pine/10 px-3 py-1 rounded-full border border-brand-pine/20">
+          Core Capabilities
+        </span>
+        <h2 class="font-heading text-3xl sm:text-4xl font-extrabold text-brand-pine mt-3 mb-4 tracking-tight">
+          What We Build At Maker Valley
+        </h2>
+        <p class="text-brand-pine/70 text-base sm:text-lg">
+          State-of-the-art tools meet maker craftsmanship. From one-off prototypes to small-batch manufacturing.
+        </p>
+      </div>
+
+      <!-- Services Grid -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-5 gap-6">
+        
+        <!-- 1. 3D PRINT -->
+        <div class="bg-brand-cream rounded-2xl p-6 border border-brand-sand hover:border-brand-orange/40 hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-orange/10 text-brand-orange flex items-center justify-center mb-5 group-hover:bg-brand-orange group-hover:text-white transition-colors duration-300">
+              <!-- 3D Cube Icon -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-brand-pine mb-2">3D PRINT</h3>
+            <p class="text-xs sm:text-sm text-brand-pine/70 leading-relaxed mb-4">
+              Rapid additive manufacturing in FDM and high-detail resin. Ideal for enclosures, functional parts, architectural models & custom figurines.
+            </p>
+          </div>
+          <a href="#contact" class="text-xs font-semibold text-brand-orange flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Rapid Prototyping &rarr;
+          </a>
+        </div>
+
+        <!-- 2. CNC MACHINING -->
+        <div class="bg-brand-cream rounded-2xl p-6 border border-brand-sand hover:border-brand-pine/40 hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-pine/10 text-brand-pine flex items-center justify-center mb-5 group-hover:bg-brand-pine group-hover:text-white transition-colors duration-300">
+              <!-- CNC / Milling Icon -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-brand-pine mb-2">CNC</h3>
+            <p class="text-xs sm:text-sm text-brand-pine/70 leading-relaxed mb-4">
+              Precision computerized routing and milling across woods, acrylics, dense foams, and soft metals for durable structural components.
+            </p>
+          </div>
+          <a href="#contact" class="text-xs font-semibold text-brand-pine flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Precision Milling &rarr;
+          </a>
+        </div>
+
+        <!-- 3. PCB & ELECTRONICS -->
+        <div class="bg-brand-cream rounded-2xl p-6 border border-brand-sand hover:border-brand-teal/60 hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-teal/20 text-brand-pine flex items-center justify-center mb-5 group-hover:bg-brand-teal group-hover:text-brand-pineDeep transition-colors duration-300">
+              <!-- Microchip / PCB Icon -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M3 9h2m-2 6h2m14-6h2m-2 6h2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-brand-pine mb-2">PCB & ELECTRONICS</h3>
+            <p class="text-xs sm:text-sm text-brand-pine/70 leading-relaxed mb-4">
+              Circuit schematic design, custom PCB assembly, firmware integration, IoT sensors, and electronic hardware prototyping.
+            </p>
+          </div>
+          <a href="#contact" class="text-xs font-semibold text-brand-pine flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Circuit Design &rarr;
+          </a>
+        </div>
+
+        <!-- 4. LASER ENGRAVING -->
+        <div class="bg-brand-cream rounded-2xl p-6 border border-brand-sand hover:border-brand-amber/60 hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-amber/15 text-brand-orange flex items-center justify-center mb-5 group-hover:bg-brand-amber group-hover:text-brand-pineDeep transition-colors duration-300">
+              <!-- Laser / Tools Icon -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-brand-pine mb-2">LASER ENGRAVING</h3>
+            <p class="text-xs sm:text-sm text-brand-pine/70 leading-relaxed mb-4">
+              Micro-precision laser etching and cutting on leather, wood, acrylic, anodized metals, customized branding plates, and gifts.
+            </p>
+          </div>
+          <a href="#contact" class="text-xs font-semibold text-brand-orange flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Fine Etching &rarr;
+          </a>
+        </div>
+
+        <!-- 5. AND MORE -->
+        <div class="bg-brand-cream rounded-2xl p-6 border border-brand-sand hover:border-brand-pine/40 hover:shadow-card-hover transition-all duration-300 group flex flex-col justify-between">
+          <div>
+            <div class="w-12 h-12 rounded-xl bg-brand-pine/10 text-brand-pine flex items-center justify-center mb-5 group-hover:bg-brand-pine group-hover:text-white transition-colors duration-300">
+              <!-- Lightbulb / And More Icon -->
+              <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/></svg>
+            </div>
+            <h3 class="font-heading font-bold text-lg text-brand-pine mb-2">AND MORE</h3>
+            <p class="text-xs sm:text-sm text-brand-pine/70 leading-relaxed mb-4">
+              End-to-end product design, 3D CAD modeling, custom hardware assembly, artisan fabrication, and maker consulting.
+            </p>
+          </div>
+          <a href="#contact" class="text-xs font-semibold text-brand-pine flex items-center gap-1 group-hover:translate-x-1 transition-transform">
+            Custom Projects &rarr;
+          </a>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ABOUT MAKER VALLEY SECTION -->
+  <section id="about" class="py-24 bg-brand-pine text-brand-cream relative overflow-hidden topo-bg">
+    <div class="noise-overlay"></div>
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 relative">
+      
+      <div class="grid lg:grid-cols-12 gap-12 items-center">
+        
+        <!-- Left Column: Story -->
+        <div class="lg:col-span-7 space-y-6">
+          <span class="text-xs font-bold tracking-widest uppercase text-brand-amber bg-brand-amber/10 px-3 py-1 rounded-full border border-brand-amber/20">
+            About Our Studio
+          </span>
+          <h2 class="font-heading text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            Where Craftsmanship <br>
+            Meets Digital Fabrication.
+          </h2>
+          <p class="text-brand-cream/85 text-base sm:text-lg leading-relaxed">
+            At <strong>Maker Valley</strong>, we believe that the best ideas shouldn’t stay trapped on computer screens or paper sketches. We are an Indian maker studio built to empower creators, inventors, engineers, and dreamers to build real, physical objects.
+          </p>
+          <p class="text-brand-cream/75 text-sm sm:text-base leading-relaxed">
+            Whether you need a functional proof-of-concept for an investor presentation, a batch of custom laser-cut parts, or an embedded PCB with firmware ready to deploy, our workshop combines industrial equipment with artisanal care.
+          </p>
+
+          <!-- 3 Process Steps -->
+          <div class="grid sm:grid-cols-3 gap-4 pt-4">
+            <div class="bg-brand-pineDeep/70 border border-brand-pineLight/40 rounded-xl p-4">
+              <span class="text-brand-amber font-mono font-bold text-xs uppercase block mb-1">01 / Step</span>
+              <h4 class="font-heading font-bold text-white text-base">Imagine</h4>
+              <p class="text-xs text-brand-cream/70 mt-1">Brainstorming, feasibility, and technical problem definition.</p>
+            </div>
+            <div class="bg-brand-pineDeep/70 border border-brand-pineLight/40 rounded-xl p-4">
+              <span class="text-brand-orange font-mono font-bold text-xs uppercase block mb-1">02 / Step</span>
+              <h4 class="font-heading font-bold text-white text-base">Design</h4>
+              <p class="text-xs text-brand-cream/70 mt-1">3D CAD modeling, circuitry schematics, and design for manufacturability.</p>
+            </div>
+            <div class="bg-brand-pineDeep/70 border border-brand-pineLight/40 rounded-xl p-4">
+              <span class="text-emerald-400 font-mono font-bold text-xs uppercase block mb-1">03 / Step</span>
+              <h4 class="font-heading font-bold text-white text-base">Build</h4>
+              <p class="text-xs text-brand-cream/70 mt-1">3D printing, milling, laser crafting, and testing in our workshop.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Column: Visual Card -->
+        <div class="lg:col-span-5 flex justify-center">
+          <div class="w-full max-w-sm bg-[#fdfbf7] text-brand-pineDeep rounded-3xl p-6 sm:p-8 shadow-2xl border border-brand-sand relative">
+            <div class="text-center space-y-4">
+              <div class="w-20 h-20 mx-auto rounded-2xl bg-white p-2 shadow-md border border-brand-sand flex items-center justify-center">
+                <img src="assets/logo-emblem.png" alt="Maker Valley Emblem" class="w-full h-full object-contain">
+              </div>
+              <div>
+                <h3 class="font-heading font-black text-2xl text-brand-pine">Maker Valley</h3>
+                <p class="font-hand text-brand-orange text-xl font-bold">Ideas, Built with Passion</p>
+              </div>
+              <div class="py-3 border-y border-brand-sand text-xs space-y-2 text-brand-pine/80">
+                <div class="flex justify-between font-medium">
+                  <span>Location</span>
+                  <span class="font-bold text-brand-pine">Kerala, India</span>
+                </div>
+                <div class="flex justify-between font-medium">
+                  <span>Direct WhatsApp</span>
+                  <span class="font-mono font-bold text-emerald-800">+91 79071 82494</span>
+                </div>
+                <div class="flex justify-between font-medium">
+                  <span>Instagram</span>
+                  <span class="font-bold text-brand-orange">@makervalley.official</span>
+                </div>
+                <div class="flex justify-between font-medium">
+                  <span>Domain</span>
+                  <span class="font-bold text-brand-pine">makervalley.co.in</span>
+                </div>
+              </div>
+              <div class="pt-2">
+                <a href="https://wa.me/message/P6YGMKPTNQJLM1" target="_blank" rel="noopener noreferrer" 
+                   class="block w-full py-3 px-4 rounded-xl bg-brand-pine hover:bg-brand-pineLight text-white font-bold text-sm shadow-md transition-colors text-center">
+                  Chat With Maker Valley
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- QUICK INQUIRY / INTERACTIVE WHATSAPP PREFILL SECTION -->
+  <section id="contact" class="py-20 bg-brand-cream relative">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6">
+      
+      <div class="bg-white rounded-3xl p-8 sm:p-12 border border-brand-sand shadow-card">
+        <div class="text-center max-w-xl mx-auto mb-8">
+          <span class="text-xs font-bold tracking-widest uppercase text-emerald-700 bg-emerald-50 px-3 py-1 rounded-full border border-emerald-200">
+            Start Your Project
+          </span>
+          <h2 class="font-heading text-3xl font-extrabold text-brand-pine mt-3 mb-2">
+            Have an Idea to Build?
+          </h2>
+          <p class="text-sm sm:text-base text-brand-pine/70">
+            Select what you are looking for and get in touch with us in one click.
+          </p>
+        </div>
+
+        <form id="inquiryForm" onsubmit="handleInquirySubmit(event)" class="space-y-6 max-w-lg mx-auto">
+          <!-- Service selector -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-brand-pine mb-2">Service Needed</label>
+            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2 text-xs">
+              <label class="flex items-center gap-2 p-2.5 rounded-xl border border-brand-sand cursor-pointer hover:bg-brand-cream has-[:checked]:border-brand-pine has-[:checked]:bg-brand-pine/5">
+                <input type="radio" name="service" value="3D Printing" checked class="accent-brand-pine">
+                <span class="font-semibold text-brand-pine">3D Print</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl border border-brand-sand cursor-pointer hover:bg-brand-cream has-[:checked]:border-brand-pine has-[:checked]:bg-brand-pine/5">
+                <input type="radio" name="service" value="CNC Machining" class="accent-brand-pine">
+                <span class="font-semibold text-brand-pine">CNC</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl border border-brand-sand cursor-pointer hover:bg-brand-cream has-[:checked]:border-brand-pine has-[:checked]:bg-brand-pine/5">
+                <input type="radio" name="service" value="PCB & Electronics" class="accent-brand-pine">
+                <span class="font-semibold text-brand-pine">PCB & Circuit</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl border border-brand-sand cursor-pointer hover:bg-brand-cream has-[:checked]:border-brand-pine has-[:checked]:bg-brand-pine/5">
+                <input type="radio" name="service" value="Laser Engraving" class="accent-brand-pine">
+                <span class="font-semibold text-brand-pine">Laser Engraving</span>
+              </label>
+              <label class="flex items-center gap-2 p-2.5 rounded-xl border border-brand-sand cursor-pointer hover:bg-brand-cream has-[:checked]:border-brand-pine has-[:checked]:bg-brand-pine/5 col-span-2 sm:col-span-2">
+                <input type="radio" name="service" value="Custom Prototyping" class="accent-brand-pine">
+                <span class="font-semibold text-brand-pine">Custom Prototyping / Other</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Project details -->
+          <div>
+            <label for="projectNote" class="block text-xs font-bold uppercase tracking-wider text-brand-pine mb-2">Project Brief (Optional)</label>
+            <textarea id="projectNote" rows="3" placeholder="Tell us briefly about your dimensions, material preference, or deadline..." 
+                      class="w-full text-sm rounded-xl border border-brand-sand p-3.5 focus:outline-none focus:ring-2 focus:ring-brand-pine/30 text-brand-pine placeholder:text-brand-pine/40 bg-brand-cream/40"></textarea>
+          </div>
+
+          <!-- Submit via WhatsApp -->
+          <button type="submit" 
+                  class="w-full py-4 px-6 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-base shadow-lg hover:shadow-emerald-600/30 transition-all flex items-center justify-center gap-2.5">
+            <svg class="w-5 h-5 fill-current shrink-0" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            <span>Send Inquiry on WhatsApp</span>
+          </button>
+        </form>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-brand-pineDeep text-brand-cream border-t border-brand-pine/50 pt-16 pb-12">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      
+      <div class="grid md:grid-cols-12 gap-10 pb-12 border-b border-brand-pineLight/30">
+        
+        <!-- Brand Info -->
+        <div class="md:col-span-5 space-y-4">
+          <div class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-xl bg-white p-1 border border-brand-sand flex items-center justify-center">
+              <img src="assets/logo-emblem.png" alt="Maker Valley" class="w-full h-full object-contain">
+            </div>
+            <span class="font-heading font-black text-2xl text-white">MAKER VALLEY</span>
+          </div>
+          <p class="font-hand text-brand-amber text-2xl">Ideas, Built with Passion</p>
+          <p class="text-xs sm:text-sm text-brand-cream/75 max-w-sm leading-relaxed">
+            Digital fabrication lab & maker studio empowering creators with 3D Printing, CNC routing, PCB electronics, and laser engraving.
+          </p>
+          <p class="text-xs text-brand-cream/60 flex items-center gap-1">
+            Made with <span class="text-red-400">❤️</span> in India
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="md:col-span-3 space-y-3">
+          <h4 class="font-heading font-bold text-sm uppercase tracking-wider text-brand-amber">Capabilities</h4>
+          <ul class="space-y-2 text-xs sm:text-sm text-brand-cream/80">
+            <li><a href="#services" class="hover:text-white transition-colors">3D Printing (FDM / Resin)</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">CNC Routing & Milling</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">PCB & Circuit Assembly</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Laser Engraving & Cutting</a></li>
+            <li><a href="#services" class="hover:text-white transition-colors">Hardware Prototyping</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct Socials -->
+        <div class="md:col-span-4 space-y-4">
+          <h4 class="font-heading font-bold text-sm uppercase tracking-wider text-brand-amber">Direct Channels</h4>
+          <div class="flex items-center gap-3">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/message/P6YGMKPTNQJLM1" target="_blank" rel="noopener noreferrer" title="WhatsApp" 
+               class="w-10 h-10 rounded-xl bg-emerald-600/20 hover:bg-emerald-600 text-emerald-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-emerald-500/30">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
+            </a>
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/makervalley.official" target="_blank" rel="noopener noreferrer" title="Instagram" 
+               class="w-10 h-10 rounded-xl bg-orange-500/20 hover:bg-brand-orange text-orange-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-orange-500/30">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.441-1.44z"/></svg>
+            </a>
+            <!-- Facebook -->
+            <a href="https://www.facebook.com/share/1CQN1jtYM4/" target="_blank" rel="noopener noreferrer" title="Facebook" 
+               class="w-10 h-10 rounded-xl bg-blue-600/20 hover:bg-[#1877f2] text-blue-400 hover:text-white flex items-center justify-center transition-all duration-200 border border-blue-500/30">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </a>
+          </div>
+          <div class="text-xs text-brand-cream/60 space-y-1">
+            <p>Direct WhatsApp: <span class="font-mono text-emerald-400">+91 79071 82494</span></p>
+            <p>Domain: <a href="https://makervalley.co.in" class="hover:underline text-brand-amber">makervalley.co.in</a></p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Copyright Bar -->
+      <div class="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-brand-cream/60 gap-4">
+        <p>&copy; 2026 Maker Valley. All rights reserved.</p>
+        <p>Imagine • Design • Build</p>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- CARD MODAL (QR CODE POPUP) -->
+  <div id="cardModal" class="fixed inset-0 z-50 bg-black/80 backdrop-blur-sm flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+    <div class="bg-white rounded-3xl max-w-lg w-full overflow-hidden shadow-2xl transform transition-transform duration-300 scale-95 border border-brand-sand" id="cardModalContent">
+      <div class="p-4 bg-brand-pine text-white flex items-center justify-between">
+        <div class="flex items-center gap-2">
+          <img src="assets/logo-emblem.png" alt="Maker Valley" class="w-6 h-6 object-contain">
+          <span class="font-heading font-bold text-sm">Maker Valley Official Connect Card</span>
+        </div>
+        <button onclick="toggleCardModal(false)" class="p-1 rounded-lg hover:bg-white/20 text-white/80 hover:text-white transition-colors">
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="p-4 max-h-[80vh] overflow-y-auto">
+        <img src="assets/card-preview.jpg" alt="Maker Valley Cards with QR codes" class="w-full h-auto rounded-xl shadow-md border border-brand-sand">
+        <div class="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
+          <a href="https://wa.me/message/P6YGMKPTNQJLM1" target="_blank" class="p-2.5 rounded-lg bg-emerald-50 text-emerald-800 font-bold hover:bg-emerald-100 transition-colors">
+            Open WhatsApp
+          </a>
+          <a href="https://www.instagram.com/makervalley.official" target="_blank" class="p-2.5 rounded-lg bg-orange-50 text-orange-800 font-bold hover:bg-orange-100 transition-colors">
+            Open Instagram
+          </a>
+          <a href="https://www.facebook.com/share/1CQN1jtYM4/" target="_blank" class="p-2.5 rounded-lg bg-blue-50 text-blue-800 font-bold hover:bg-blue-100 transition-colors">
+            Open Facebook
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION -->
+  <div id="toast" class="fixed bottom-6 right-6 z-50 bg-brand-pine text-white text-sm font-semibold px-4 py-3 rounded-xl shadow-xl border border-brand-amber/40 transform translate-y-16 opacity-0 transition-all duration-300 pointer-events-none flex items-center gap-2">
+    <svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+    <span id="toastMsg">Action complete</span>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script>
+    // Copy helper
+    function copyToClipboard(text, message) {
+      navigator.clipboard.writeText(text).then(() => {
+        showToast(message || 'Copied to clipboard!');
+      }).catch(() => {
+        showToast('Number: ' + text);
+      });
+    }
+
+    // Toast helper
+    function showToast(msg) {
+      const toast = document.getElementById('toast');
+      const toastMsg = document.getElementById('toastMsg');
+      toastMsg.innerText = msg;
+      toast.classList.remove('translate-y-16', 'opacity-0');
+      toast.classList.add('translate-y-0', 'opacity-100');
+      setTimeout(() => {
+        toast.classList.add('translate-y-16', 'opacity-0');
+        toast.classList.remove('translate-y-0', 'opacity-100');
+      }, 2500);
+    }
+
+    // Modal helper
+    function toggleCardModal(show) {
+      const modal = document.getElementById('cardModal');
+      const content = document.getElementById('cardModalContent');
+      if (show) {
+        modal.classList.remove('hidden');
+        setTimeout(() => {
+          modal.classList.remove('opacity-0');
+          content.classList.remove('scale-95');
+          content.classList.add('scale-100');
+        }, 10);
+      } else {
+        modal.classList.add('opacity-0');
+        content.classList.remove('scale-100');
+        content.classList.add('scale-95');
+        setTimeout(() => {
+          modal.classList.add('hidden');
+        }, 300);
+      }
+    }
+
+    // Interactive WhatsApp Inquiry generator
+    function handleInquirySubmit(e) {
+      e.preventDefault();
+      const service = document.querySelector('input[name="service"]:checked').value;
+      const note = document.getElementById('projectNote').value.trim();
+      
+      let message = `Hello Maker Valley! I am interested in *${service}*.`;
+      if (note) {
+        message += `\n\nProject details: ${note}`;
+      } else {
+        message += `\n\nCould you please share more information and pricing details?`;
+      }
+      
+      const encodedMsg = encodeURIComponent(message);
+      const waUrl = `https://wa.me/917907182494?text=${encodedMsg}`;
+      window.open(waUrl, '_blank');
+    }
+  </script>
 </body>
 </html>
